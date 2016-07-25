@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DEMO PSD UI
+Bundle-SymbolicName: org.opencabe.demo.psd.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.opencabe.diagrams.ui;bundle-version="1.0.0",
+ org.scopio.demo.psd;bundle-version="0.1.0",
+ org.scopio.project;bundle-version="1.0.0",
+ org.eclipse.core.runtime;bundle-version="3.7.0",
+ org.opencabe.workbench;bundle-version="0.9.0",
+ org.opencabe.attributes.ui;bundle-version="1.0.0",
+ org.eclipse.draw2d,
+ org.eclipse.gef,
+ org.scopio.diagrams,
+ org.opencabe.bpmn.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Activator: org.opencabe.demo.psd.ui.Activator
+Bundle-ActivationPolicy: lazy
+Export-Package: org.opencabe.demo.psd.editparts,
+ org.opencabe.demo.psd.figures,
+ org.opencabe.demo.psd.workbench
