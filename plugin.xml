@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.opencabe.demo.psd.workbench.AddDemoPSDDiagramHangler"
+            id="org.opencabe.demo.psd.workbench.commands.addDemoPSDDiagram"
+            name="Add DEMO PSD">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.opencabe.workbench.views.DiagramView">
+         <command
+               commandId="org.opencabe.demo.psd.workbench.commands.addDemoPSDDiagram"
+               icon="icons/demo24.png"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+                  <reference
+                     definitionId="org.opencabe.workbench.expressions.projectOpen">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.opencabe.demo.psd.workbench.DemoPSDDiagramEditor"
+            contributorClass="org.opencabe.workbench.editors.DiagramEditorsContributor"
+            default="false"
+            icon="icons/demo16.png"
+            id="org.opencabe.demo.psd.workbench.demoPSDDiagramEditor"
+            name="DEMO PSD Diagram">
+      </editor>
+   </extension>
+   <extension
+         point="org.opencabe.workbench.diagram_editors">
+      <editor
+            diagram="org.scopio.demo.psd.impl.DemoPSDDiagramImpl"
+            editorID="org.opencabe.demo.psd.workbench.demoPSDDiagramEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.opencabe.attributes.ui.attributes_control_factory">
+      <factory
+            class="org.opencabe.demo.psd.attributes.DemoPsdControlFactory">
+      </factory>
+   </extension>
+
+</plugin>
